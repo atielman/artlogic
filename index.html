@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artlogic Pricing Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; max-width: 700px; margin: auto; }
+    label, select, input { display: block; margin-top: 0.5rem; width: 100%; }
+    .result { margin-top: 1rem; font-weight: bold; font-size: 1rem; }
+    .module-row { display: flex; align-items: flex-start; gap: 1rem; margin-top: 1rem; }
+    .module-row label { flex: 1; }
+    .discount-display { font-size: 0.9rem; color: #333; margin-top: 0.2rem; }
+  </style>
+</head>
+<body>
+  <h1>Artlogic Pricing Calculator</h1>
+
+  <label>Client Type
+    <select id="clientType">
+      <option value="Gallery">Gallery</option>
+      <option value="Artist">Artist</option>
+      <option value="Collector">Collector</option>
+    </select>
+  </label>
+
+  <label>Currency
+    <select id="currency">
+      <option value="GBP">GBP</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+  </label>
+
+  <label>Billing Cycle
+    <select id="billingCycle">
+      <option value="Annual">Annual (discounted monthly rate)</option>
+      <option value="Quarterly">Quarterly</option>
+    </select>
+  </label>
+
+  <div class="module-row">
+    <label>Management Users
+      <input type="number" id="userCount" value="1" min="1" />
+    </label>
+    <label>Management Discount (%)
+      <input type="number" id="managementDiscount" value="0" min="0" max="100" />
+      <div class="discount-display">Discount amount: <span id="managementDiscounted">0.00</span></div>
+      <label>Valid For
+        <select id="managementDuration"><option value="1">1 months</option><option value="2">2 months</option><option value="3">3 months</option><option value="4">4 months</option><option value="5">5 months</option><option value="6">6 months</option><option value="7">7 months</option><option value="8">8 months</option><option value="9">9 months</option><option value="10">10 months</option><option value="11">11 months</option><option value="12">12 months</option><option value="13">13 months</option><option value="14">14 months</option><option value="15">15 months</option><option value="16">16 months</option><option value="17">17 months</option><option value="18">18 months</option><option value="19">19 months</option><option value="20">20 months</option><option value="21">21 months</option><option value="22">22 months</option><option value="23">23 months</option><option value="24">24 months</option><option value="25">25 months</option><option value="26">26 months</option><option value="27">27 months</option><option value="28">28 months</option><option value="29">29 months</option><option value="30">30 months</option><option value="31">31 months</option><option value="32">32 months</option><option value="33">33 months</option><option value="34">34 months</option><option value="35">35 months</option><option value="36">36 months</option></select>
+      </label>
+    </label>
+  </div>
+
+  <div class="module-row">
+    <label>Website Tier
+      <select id="websiteTier">
+        <option value="None">None</option>
+        <option value="Essential">Essential</option>
+        <option value="Professional">Professional</option>
+        <option value="Expert">Expert</option>
+      </select>
+    </label>
+    <label>Website Discount (%)
+      <input type="number" id="websiteDiscount" value="0" min="0" max="100" />
+      <div class="discount-display">Discount amount: <span id="websiteDiscounted">0.00</span></div>
+      <label>Valid For
+        <select id="websiteDuration"><option value="1">1 months</option><option value="2">2 months</option><option value="3">3 months</option><option value="4">4 months</option><option value="5">5 months</option><option value="6">6 months</option><option value="7">7 months</option><option value="8">8 months</option><option value="9">9 months</option><option value="10">10 months</option><option value="11">11 months</option><option value="12">12 months</option><option value="13">13 months</option><option value="14">14 months</option><option value="15">15 months</option><option value="16">16 months</option><option value="17">17 months</option><option value="18">18 months</option><option value="19">19 months</option><option value="20">20 months</option><option value="21">21 months</option><option value="22">22 months</option><option value="23">23 months</option><option value="24">24 months</option><option value="25">25 months</option><option value="26">26 months</option><option value="27">27 months</option><option value="28">28 months</option><option value="29">29 months</option><option value="30">30 months</option><option value="31">31 months</option><option value="32">32 months</option><option value="33">33 months</option><option value="34">34 months</option><option value="35">35 months</option><option value="36">36 months</option></select>
+      </label>
+    </label>
+  </div>
+
+  <div class="module-row">
+    <label>Marketing Tier
+      <select id="marketingTier">
+        <option value="None">None</option>
+        <option value="Essential">Essential</option>
+        <option value="Professional">Professional</option>
+        <option value="Expert">Expert</option>
+      </select>
+    </label>
+    <label>Marketing Discount (%)
+      <input type="number" id="marketingDiscount" value="0" min="0" max="100" />
+      <div class="discount-display">Discount amount: <span id="marketingDiscounted">0.00</span></div>
+      <label>Valid For
+        <select id="marketingDuration"><option value="1">1 months</option><option value="2">2 months</option><option value="3">3 months</option><option value="4">4 months</option><option value="5">5 months</option><option value="6">6 months</option><option value="7">7 months</option><option value="8">8 months</option><option value="9">9 months</option><option value="10">10 months</option><option value="11">11 months</option><option value="12">12 months</option><option value="13">13 months</option><option value="14">14 months</option><option value="15">15 months</option><option value="16">16 months</option><option value="17">17 months</option><option value="18">18 months</option><option value="19">19 months</option><option value="20">20 months</option><option value="21">21 months</option><option value="22">22 months</option><option value="23">23 months</option><option value="24">24 months</option><option value="25">25 months</option><option value="26">26 months</option><option value="27">27 months</option><option value="28">28 months</option><option value="29">29 months</option><option value="30">30 months</option><option value="31">31 months</option><option value="32">32 months</option><option value="33">33 months</option><option value="34">34 months</option><option value="35">35 months</option><option value="36">36 months</option></select>
+      </label>
+    </label>
+  </div>
+
+  <div class="module-row">
+    <label>Sales Licenses
+      <input type="number" id="salesUsers" value="0" min="0" />
+    </label>
+    <label>Sales Discount (%)
+      <input type="number" id="salesDiscount" value="0" min="0" max="100" />
+      <div class="discount-display">Discount amount: <span id="salesDiscounted">0.00</span></div>
+      <label>Valid For
+        <select id="salesDuration"><option value="1">1 months</option><option value="2">2 months</option><option value="3">3 months</option><option value="4">4 months</option><option value="5">5 months</option><option value="6">6 months</option><option value="7">7 months</option><option value="8">8 months</option><option value="9">9 months</option><option value="10">10 months</option><option value="11">11 months</option><option value="12">12 months</option><option value="13">13 months</option><option value="14">14 months</option><option value="15">15 months</option><option value="16">16 months</option><option value="17">17 months</option><option value="18">18 months</option><option value="19">19 months</option><option value="20">20 months</option><option value="21">21 months</option><option value="22">22 months</option><option value="23">23 months</option><option value="24">24 months</option><option value="25">25 months</option><option value="26">26 months</option><option value="27">27 months</option><option value="28">28 months</option><option value="29">29 months</option><option value="30">30 months</option><option value="31">31 months</option><option value="32">32 months</option><option value="33">33 months</option><option value="34">34 months</option><option value="35">35 months</option><option value="36">36 months</option></select>
+      </label>
+    </label>
+  </div>
+
+  <button onclick="calculatePrice()">Calculate</button>
+
+  <div class="result" id="mgmtSummary"></div>
+  <div class="result" id="webSummary"></div>
+  <div class="result" id="mktSummary"></div>
+  <div class="result" id="salesSummary"></div>
+  <hr>
+  <div class="result" id="finalTotals"></div>
+
+<script>
+const pricing = {
+  "Gallery": {
+    "GBP": {
+      "Management": { "Professional": [90, 99] },
+      "Website": { "Essential": [53, 58], "Professional": [120, 132], "Expert": [205, 226] },
+      "Marketing": { "Essential": [11, 12], "Professional": [53, 58], "Expert": [100, 110] },
+      "Sales": { "Professional": [48, 53] }
+    }
+  }
+};
+
+function calculatePrice() {
+  const currency = document.getElementById("currency").value;
+  const billing = document.getElementById("billingCycle").value;
+  const idx = billing === "Annual" ? 0 : 1;
+  const months = 12;
+
+  const users = +document.getElementById("userCount").value;
+  const salesUsers = +document.getElementById("salesUsers").value;
+
+  const mgmtRate = pricing.Gallery[currency].Management.Professional[idx];
+  const salesRate = pricing.Gallery[currency].Sales.Professional[idx];
+  const websiteTier = document.getElementById("websiteTier").value;
+  const marketingTier = document.getElementById("marketingTier").value;
+
+  const webRate = websiteTier !== "None" ? pricing.Gallery[currency].Website[websiteTier][idx] : 0;
+  const mktRate = marketingTier !== "None" ? pricing.Gallery[currency].Marketing[marketingTier][idx] : 0;
+
+  const getDiscountedAnnual = (base, disc, duration, isPerUser, qty) => {
+    const full = isPerUser ? base * qty : base;
+    const dAmt = full * (disc / 100);
+    return {
+      annual: ((full - dAmt) * duration) + (full * (months - duration)),
+      discount: dAmt * duration
+    };
+  };
+
+  const mgmt = getDiscountedAnnual(mgmtRate, +document.getElementById("managementDiscount").value, +document.getElementById("managementDuration").value, true, users);
+  const sales = getDiscountedAnnual(salesRate, +document.getElementById("salesDiscount").value, +document.getElementById("salesDuration").value, true, salesUsers);
+  const web = getDiscountedAnnual(webRate, +document.getElementById("websiteDiscount").value, +document.getElementById("websiteDuration").value, false, 1);
+  const mkt = getDiscountedAnnual(mktRate, +document.getElementById("marketingDiscount").value, +document.getElementById("marketingDuration").value, false, 1);
+
+  document.getElementById("managementDiscounted").textContent = mgmt.discount.toFixed(2);
+  document.getElementById("salesDiscounted").textContent = sales.discount.toFixed(2);
+  document.getElementById("websiteDiscounted").textContent = web.discount.toFixed(2);
+  document.getElementById("marketingDiscounted").textContent = mkt.discount.toFixed(2);
+
+  document.getElementById("mgmtSummary").innerHTML = `<strong>Management:</strong> £${(mgmt.annual / 12).toFixed(2)} /mo | £${mgmt.annual.toFixed(2)} /yr`;
+  document.getElementById("salesSummary").innerHTML = `<strong>Sales:</strong> £${(sales.annual / 12).toFixed(2)} /mo | £${sales.annual.toFixed(2)} /yr`;
+  document.getElementById("webSummary").innerHTML = `<strong>Website:</strong> £${(web.annual / 12).toFixed(2)} /mo | £${web.annual.toFixed(2)} /yr`;
+  document.getElementById("mktSummary").innerHTML = `<strong>Marketing:</strong> £${(mkt.annual / 12).toFixed(2)} /mo | £${mkt.annual.toFixed(2)} /yr`;
+
+  const grandAnnual = mgmt.annual + sales.annual + web.annual + mkt.annual;
+  const totalDiscount = mgmt.discount + sales.discount + web.discount + mkt.discount;
+
+  document.getElementById("finalTotals").innerHTML =
+    `<h3>Final Totals</h3>
+    Monthly Average: £${(grandAnnual / 12).toFixed(2)}<br>
+    Annual Total: £${grandAnnual.toFixed(2)}<br>
+    Total Discount: £${totalDiscount.toFixed(2)}<br>`;
+}
+</script>
+</body>
+</html>
